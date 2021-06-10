@@ -3,6 +3,7 @@ import close from "../assets/close.svg";
 import left from "../assets/left.svg";
 import right from "../assets/right.svg";
 import timePlaying from "../assets/timeplaying.svg";
+import leftArrow from "../assets/leftArrow.svg";
 import "./Modal.css";
 
 const Modal = (props) => {
@@ -32,9 +33,15 @@ const Modal = (props) => {
             <img src={left} />
           </button>
           {props.children}
-          <button className="navButton">
-            <img src={right} />
-          </button>
+          {props.size.width >= 1440 ? (
+            <button className="navButton">
+              <img src={right} />
+            </button>
+          ) : (
+            <button className="leftArrow">
+              <img src={leftArrow} />
+            </button>
+          )}
         </div>
         <div className="carouselDiv">
           {props.data.map((video, index) => (

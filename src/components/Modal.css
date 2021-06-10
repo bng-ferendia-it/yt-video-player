@@ -39,8 +39,8 @@
 }
 .carouselImageAbsolete {
   position: absolute;
-  top: 34%;
-  left: 25%;
+  top: 42px;
+  left: 50px;
 }
 .carouselImage {
   height: 112px;
@@ -48,6 +48,7 @@
 }
 
 .closeButtonDiv {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -56,20 +57,25 @@
   height: 150px;
 }
 .closeButton {
+  position: absolute;
   background-color: transparent;
   border: none;
-  height: 48px;
-  width: 48px;
-  margin-top: 24px;
-  margin-right: 24px;
+  height: 52px;
+  width: 52px;
+  top: 24px;
+  right: 24px;
+  padding: 0;
 }
 .closeButton:hover {
   background-color: transparent;
   cursor: pointer;
 }
 .videoContainer {
+  position: absolute;
+  top: 52px;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 .navButton {
   width: 60px;
@@ -78,14 +84,17 @@
   border: none;
 }
 .carouselDiv {
+  position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   height: 100%;
   width: 100%;
 }
 .videoButton {
+  position: absolute;
+  top: 25px;
   margin: 8px;
   width: 200px;
   height: 112px;
@@ -98,13 +107,21 @@
 .displayNone {
   display: none;
 }
-
-/* @media (min-width: 1440px) {
-
-} */
+.leftArrow {
+  background-color: transparent;
+  border: none;
+}
+@media (max-width: 1440px) {
+  .navButton {
+    display: none;
+  }
+}
 @media (max-width: 1440px) and (min-width: 1024px) {
   .carouselDiv {
+    max-height: 132px;
     background-color: black;
+    position: absolute;
+    bottom: 0;
   }
   .carouselImage {
     width: 144px;
@@ -117,11 +134,27 @@
   .carouselImageAbsolete {
     width: 59px;
     height: 16px;
+    top: 33px;
+    left: 44px;
+  }
+  .closeButtonDiv {
+    position: absolute;
+    max-height: 75px;
+    top: 0px;
+  }
+
+  .videoContainer {
+    position: absolute;
+    top: 29px;
   }
 }
 @media (max-width: 1024px) and (min-width: 768px) {
   .carouselDiv {
+    position: absolute;
+    bottom: 0;
+    max-height: 92px;
     background-color: black;
+    align-items: center;
   }
   .carouselImage {
     width: 102px;
@@ -134,7 +167,19 @@
   .carouselImageAbsolete {
     width: 59px;
     height: 16px;
+    top: 22px;
+    left: 22px;
+  }
+  .closeButtonDiv {
+    position: absolute;
+    top: 0px;
+    max-height: 75px;
+  }
+  .videoContainer {
+    position: absolute;
+    top: 145px;
   }
 }
 @media (max-width: 768px) and (min-width: 375px) {
+
 }

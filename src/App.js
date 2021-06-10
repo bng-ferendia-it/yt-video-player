@@ -30,7 +30,7 @@ function App() {
   const [id, setId] = useState();
 
   const size = useWindowSize();
-
+console.log(size)
   const showModal = (video) => {
     setUrl(video.url);
     setId(video.id);
@@ -67,6 +67,7 @@ function App() {
         id={id}
         urlChange={handleUrlChange}
         idChange={handleIdChange}
+        size={size}
       >
         <RenderPlayer show={show} videoId={id} url={url} size={size} />
       </Modal>
