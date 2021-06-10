@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import close from "../assets/close.svg";
+import left from "../assets/left.svg";
+import right from "../assets/right.svg";
 import timePlaying from "../assets/timeplaying.svg";
 import "./Modal.css";
 
@@ -25,18 +27,39 @@ const Modal = (props) => {
             <img src={close} />
           </button>
         </div>
-        <div>{props.children}</div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <button
+            style={{
+              width: "60px",
+              height: "60px",
+              backgroundColor: "transparent",
+              border: "none",
+            }}
+          >
+            <img src={left} />
+          </button>
+          {props.children}
+          <button
+            style={{
+              width: "60px",
+              height: "60px",
+              backgroundColor: "transparent",
+              border: "none",
+            }}
+          >
+            <img src={right} />
+          </button>
+        </div>
         <div className="carouselDiv">
           {props.data.map((video, index) => (
             <div key={index}>
               <button
                 style={{
                   border: "none",
-                  backgroundColor: "none",
+                  backgroundColor: "transparent",
                   cursor: "pointer",
                   margin: "25px 8px",
                   padding: "0px",
-                  backgroundColor: "#2e2e2e",
                 }}
                 type="button"
                 onClick={() => onCarouselClick(video.url, video.id)}

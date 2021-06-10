@@ -1,10 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import datayt from "./data";
 import Modal from "./components/Modal";
 import React, { useState, useEffect } from "react";
 import RenderPlayer from "./components/RenderPlayer";
-import { unmountComponentAtNode } from "react-dom";
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({

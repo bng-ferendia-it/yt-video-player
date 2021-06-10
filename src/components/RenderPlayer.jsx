@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React from "react";
 import ReactPlayer from "react-player/youtube";
 
 function RenderPlayer(props) {
-  const [play, setPlay] = useState(props.show);
-
   var videoHeight = 1064;
   var videoWidth = 504;
   if (props.size.width >= 1440) {
