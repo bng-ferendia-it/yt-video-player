@@ -18,6 +18,35 @@
   color: white;
 }
 
+.carouselDivButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 25px 8px;
+  padding: 0px;
+}
+.carouselImageContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.carouselImageRelative {
+  height: 112px;
+  width: 200px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.carouselImageAbsolete {
+  position: absolute;
+  top: 34%;
+  left: 25%;
+}
+.carouselImage {
+  height: 112px;
+  width: 200px;
+}
+
 .closeButtonDiv {
   display: flex;
   flex-direction: row;
@@ -38,7 +67,16 @@
   background-color: transparent;
   cursor: pointer;
 }
-
+.videoContainer {
+  display: flex;
+  align-items: center;
+}
+.navButton {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+}
 .carouselDiv {
   display: flex;
   flex-direction: row;
@@ -59,4 +97,44 @@
 
 .displayNone {
   display: none;
+}
+
+/* @media (min-width: 1440px) {
+
+} */
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .carouselDiv {
+    background-color: black;
+  }
+  .carouselImage {
+    width: 144px;
+    height: 84px;
+  }
+  .carouselImageRelative {
+    width: 144px;
+    height: 84px;
+  }
+  .carouselImageAbsolete {
+    width: 59px;
+    height: 16px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .carouselDiv {
+    background-color: black;
+  }
+  .carouselImage {
+    width: 102px;
+    height: 60px;
+  }
+  .carouselImageRelative {
+    width: 102px;
+    height: 60px;
+  }
+  .carouselImageAbsolete {
+    width: 59px;
+    height: 16px;
+  }
+}
+@media (max-width: 768px) and (min-width: 375px) {
 }

@@ -52,11 +52,7 @@ function App() {
       {data.map((video, index) => (
         <div key={index}>
           <button
-            style={{
-              border: "none",
-              backgroundColor: "none",
-              cursor: "pointer",
-            }}
+            className="imageButton"
             type="button"
             onClick={() => showModal(video)}
           >

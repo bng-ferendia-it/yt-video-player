@@ -27,26 +27,12 @@ const Modal = (props) => {
             <img src={close} />
           </button>
         </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <button
-            style={{
-              width: "60px",
-              height: "60px",
-              backgroundColor: "transparent",
-              border: "none",
-            }}
-          >
+        <div className="videoContainer">
+          <button className="navButton">
             <img src={left} />
           </button>
           {props.children}
-          <button
-            style={{
-              width: "60px",
-              height: "60px",
-              backgroundColor: "transparent",
-              border: "none",
-            }}
-          >
+          <button className="navButton">
             <img src={right} />
           </button>
         </div>
@@ -54,42 +40,20 @@ const Modal = (props) => {
           {props.data.map((video, index) => (
             <div key={index}>
               <button
-                style={{
-                  border: "none",
-                  backgroundColor: "transparent",
-                  cursor: "pointer",
-                  margin: "25px 8px",
-                  padding: "0px",
-                }}
+                className="carouselDivButton"
                 type="button"
                 onClick={() => onCarouselClick(video.url, video.id)}
               >
                 {video.id == props.id ? (
-                  <div style={{ position: "relative", top: "0", left: "0" }}>
+                  <div className="carouselImageContainer">
                     <img
-                      style={{
-                        height: "112px",
-                        width: "200px",
-                        position: "relative",
-                        top: "0",
-                        left: "0",
-                      }}
+                      className="carouselImageRelative"
                       src={`${video.thumbnail}`}
                     />
-                    <img
-                      style={{
-                        position: "absolute",
-                        top: "34%",
-                        left: "25%",
-                      }}
-                      src={timePlaying}
-                    />
+                    <img className="carouselImageAbsolete" src={timePlaying} />
                   </div>
                 ) : (
-                  <img
-                    style={{ height: "112px", width: "200px" }}
-                    src={`${video.thumbnail}`}
-                  />
+                  <img className="carouselImage" src={`${video.thumbnail}`} />
                 )}
               </button>
             </div>
