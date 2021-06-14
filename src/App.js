@@ -28,12 +28,18 @@ function App() {
   const [data, setData] = useState(datayt);
   const [url, setUrl] = useState();
   const [id, setId] = useState();
+  const [videoIndex, setVideoIndex] = useState();
+  const [videoName, setVideoName] = useState();
+  const [viewsNumber, setViewsNumber] = useState();
 
   const size = useWindowSize();
-console.log(size)
-  const showModal = (video) => {
+  console.log(size);
+  const showModal = (video, index) => {
+    setVideoIndex(index);
     setUrl(video.url);
     setId(video.id);
+    setVideoName(video.videoName);
+    setViewsNumber(video.viewsNumber);
     setShow(true);
   };
 
@@ -47,16 +53,25 @@ console.log(size)
   function handleIdChange(newValue) {
     setId(newValue);
   }
+  function handleIndexChange(newValue) {
+    setVideoIndex(newValue);
+  }
+  function handleNameChange(newValue) {
+    setVideoName(newValue);
+  }
+  function handleViewsChange(newValue) {
+    setViewsNumber(newValue);
+  }
   return (
     <div className="App">
       {data.map((video, index) => (
-        <div key={index}>
+        <div>
           <button
             className="imageButton"
             type="button"
-            onClick={() => showModal(video)}
+            onClick={() => showModal(video, index)}
           >
-            <img src={`${video.thumbnail}`} />
+            <img alt="thumbnail" src={`${video.thumbnail}`} />
           </button>
         </div>
       ))}
@@ -65,11 +80,22 @@ console.log(size)
         handleClose={hideModal}
         data={data}
         id={id}
+        vidIndex={videoIndex}
+        changeVidIndex={handleIndexChange}
         urlChange={handleUrlChange}
+        nameChange={handleNameChange}
         idChange={handleIdChange}
+        viewsChange={setViewsNumber}
         size={size}
       >
-        <RenderPlayer show={show} videoId={id} url={url} size={size} />
+        <RenderPlayer
+          show={show}
+          videoId={id}
+          url={url}
+          size={size}
+          name={videoName}
+          views={viewsNumber}
+        />
       </Modal>
     </div>
   );
